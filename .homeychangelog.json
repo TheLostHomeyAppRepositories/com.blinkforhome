@@ -188,7 +188,11 @@
     "de": "oAuth-Anmeldung korrigiert (Blink API-Änderungen)"
   },
   "2.1.1": {
-    "en": "Fixed oAuth authorization (second login for same Homey",
+    "en": "Fixed oAuth authorization (second login for same Homey)",
     "de": "oAuth-Anmeldung korrigiert (zweite Anmeldung für den gleichen Homey)"
+  },
+  "2.1.2": {
+    "en": "Fixed timer reset when removing the device.",
+    "de": "Timer-Reset beim Entfernen des Gerätes korrigiert."
   }
 }

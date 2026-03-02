@@ -66,6 +66,18 @@ class accountDevice extends Homey.Device {
 
     } // end onInit
 
+    async onUninit(){
+        if (this.intervalMotionLoopSyncModule){
+            this.homey.clearInterval(this.intervalMotionLoopSyncModule);
+        }
+        if (this.intervalMotionLoopCloud){
+            this.homey.clearInterval(this.intervalMotionLoopCloud);
+        }
+        if (this.intervalUpdateLoop){
+            this.homey.clearInterval(this.intervalUpdateLoop);
+        }
+    }
+
     async updateCapabilities(){
         // add new capabilities
         if (!this.hasCapability('status_storage')){

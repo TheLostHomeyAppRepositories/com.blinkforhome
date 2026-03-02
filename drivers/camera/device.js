@@ -53,13 +53,13 @@ class cameraDevice extends Homey.Device {
     getParent(){
         this.parent = this.homey.app.getAccountDevice(this.getData().accountId); 
         if (this.parent){
-            this.setSettings(
-                {
+            const settingsData = {
                     account_device : this.parent.getName() || '',
                     account_id : this.parent.getData().id.toString() || '',
                     camera_id : this.getData().id.toString() || ''
-                }
-            ).catch(error => {this.error("getParent().setSettings(): ", error.message)});
+                };
+
+            this.setSettings( settingsData ).catch(error => {this.error("getParent().setSettings(): ", error.message, settingsData)});
             this.setDeviceAvailable();
         }
         else{
